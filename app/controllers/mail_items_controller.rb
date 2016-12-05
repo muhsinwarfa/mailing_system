@@ -72,3 +72,4 @@ class MailItemsController < ApplicationController
       params.require(:mail_item).permit(:date_arrived_pittsburgh, :date_arrived_qatar, :date_delivered, :sender, :description, :comment, :shipping_weight, :discard, :user_id)
     end
 end
+

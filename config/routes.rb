@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+
+
   resources :locations
   resources :mail_items
   resources :users
+   get 'sessions/new' => 'sessions#new', as: :login
+  get 'sessions/destroy' => 'sessions#destroy', as: :logout
+  get 'users/new' => 'users#new', as: :signup
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
