@@ -1,0 +1,2 @@
+json.extract! mail_item, :id, :date_arrived_pittsburgh, :date_arrived_qatar, :date_delivered, :sender, :description, :comment, :shipping_weight, :discard, :user_id, :created_at, :updated_at
+json.url mail_item_url(mail_item, format: :json)

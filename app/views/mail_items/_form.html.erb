@@ -1,0 +1,53 @@
+<%= form_for(@mail_item) do |f| %>
+  <% if @mail_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mail_item.errors.count, "error") %> prohibited this mail_item from being saved:</h2>
+
+      <ul>
+      <% @mail_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date_arrived_pittsburgh %><br>
+    <%= f.datetime_select :date_arrived_pittsburgh %>
+  </div>
+  <div class="field">
+    <%= f.label :date_arrived_qatar %><br>
+    <%= f.datetime_select :date_arrived_qatar %>
+  </div>
+  <div class="field">
+    <%= f.label :date_delivered %><br>
+    <%= f.datetime_select :date_delivered %>
+  </div>
+  <div class="field">
+    <%= f.label :sender %><br>
+    <%= f.text_field :sender %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :comment %><br>
+    <%= f.text_area :comment %>
+  </div>
+  <div class="field">
+    <%= f.label :shipping_weight %><br>
+    <%= f.number_field :shipping_weight %>
+  </div>
+  <div class="field">
+    <%= f.label :discard %><br>
+    <%= f.check_box :discard %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

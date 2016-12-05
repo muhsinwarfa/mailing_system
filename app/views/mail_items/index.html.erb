@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Mail Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date arrived pittsburgh</th>
+      <th>Date arrived qatar</th>
+      <th>Date delivered</th>
+      <th>Sender</th>
+      <th>Description</th>
+      <th>Comment</th>
+      <th>Shipping weight</th>
+      <th>Discard</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mail_items.each do |mail_item| %>
+      <tr>
+        <td><%= mail_item.date_arrived_pittsburgh %></td>
+        <td><%= mail_item.date_arrived_qatar %></td>
+        <td><%= mail_item.date_delivered %></td>
+        <td><%= mail_item.sender %></td>
+        <td><%= mail_item.description %></td>
+        <td><%= mail_item.comment %></td>
+        <td><%= mail_item.shipping_weight %></td>
+        <td><%= mail_item.discard %></td>
+        <td><%= mail_item.user_id %></td>
+        <td><%= link_to 'Show', mail_item %></td>
+        <td><%= link_to 'Edit', edit_mail_item_path(mail_item) %></td>
+        <td><%= link_to 'Destroy', mail_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mail item', new_mail_item_path %>
